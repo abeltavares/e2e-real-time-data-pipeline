@@ -1,0 +1,30 @@
+################################################################################
+# Copyright 2019 Ververica GmbH
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################
+
+jobmanager.rpc.address: jobmanager
+rest.port: 18081
+state.backend: rocksdb
+state.backend.incremental: true
+state.checkpoint-storage: filesystem
+blob.server.port: 6124
+query.server.port: 6125
+classloader.resolve-order: parent-first
+jobmanager.archive.fs.cleanup-expired-jobs: false
+jobmanager.archive.fs.job-expiration-time: 24h
+rest.client.max-content-length: 104857600 # 100MB
+taskmanager.network.request-backoff.max: 120000
+heartbeat.timeout: 300000
+akka.ask.timeout: 60s
